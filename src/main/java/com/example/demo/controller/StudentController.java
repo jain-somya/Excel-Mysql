@@ -26,7 +26,12 @@ public class StudentController {
 	@Autowired
 	private ExcelDb service;
 	
-	
+	@GetMapping("/")
+	public String fp() {
+		
+		 
+		 return "index.html";
+	}
 	@PostMapping("/toDb")
 	public String toDb(@RequestParam("file") MultipartFile file) {
 		 try {service.FromExceltoDb(file.getInputStream());}
